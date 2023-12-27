@@ -1,6 +1,5 @@
 package com.mk.ukim.finki.galaxia.auth;
 
-
 import com.mk.ukim.finki.galaxia.user.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -40,12 +39,5 @@ public class AuthController {
 
         System.out.println(response.getStatus());
         return ResponseEntity.ok("Ok");
-    }
-
-    @GetMapping("current-user")
-    public ResponseEntity<User> getCurrentUser(HttpServletRequest request){
-        System.out.println(request);
-
-        return ResponseEntity.ok().build();
     }
 }
