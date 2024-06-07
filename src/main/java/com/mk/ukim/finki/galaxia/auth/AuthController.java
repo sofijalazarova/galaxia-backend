@@ -1,6 +1,6 @@
 package com.mk.ukim.finki.galaxia.auth;
 
-import com.mk.ukim.finki.galaxia.user.User;
+import com.mk.ukim.finki.galaxia.service.impl.JwtService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;

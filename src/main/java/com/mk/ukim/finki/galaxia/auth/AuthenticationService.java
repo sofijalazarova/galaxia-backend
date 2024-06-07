@@ -58,7 +58,7 @@ public class AuthenticationService {
                 .build();
     }
 
-    public Optional<User> getUserById(Long userId){
-        return this.repository.findById(userId);
+    public Optional<User> getUserByEmail(String email){
+        return this.repository.findByEmail(email);
     }
 }
