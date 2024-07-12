@@ -29,18 +29,17 @@ public class EnrollmentServiceImpl implements EnrollmentService {
 
     @Override
     public void enrollUserInCourse(Long userId, Long courseId) {
-        User user = this.userRepository.findById(userId).orElseThrow(() -> new UsernameNotFoundException(userId.toString()));
-        Course course = this.courseRepository.findById(courseId).orElseThrow(() -> new CourseNotFoundException(courseId));
+        User user = this.userRepository.findById(userId).orElseThrow();
+        Course course = this.courseRepository.findById(courseId)
+                .orElseThrow(() -> new CourseNotFoundException(courseId));
 
-        if(user == null || course == null){
-            throw new IllegalArgumentException("Invalid user or course");
+        if(course == null){
+            throw new IllegalArgumentException("Invalid course");
         }
 
         Enrollment enrollment = new Enrollment();
         enrollment.setUser(user);
         enrollment.setCourse(course);
-        enrollment.setEnrollmentDate(LocalDate.now());
-        enrollment.setCompletionStatus(false);
 
         enrollmentRepository.save(enrollment);
     }
