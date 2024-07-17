@@ -15,7 +15,8 @@ public class CorsConfiguration {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
 //                        .allowedOriginPatterns("http://localhost:5173")
-                        .allowedOriginPatterns("http://localhost:5173/galaxia")
+// 2                        .allowedOriginPatterns("http://localhost:5173/galaxia")
+                        .allowedOriginPatterns("https://sofijalazarova.github.io/galaxia/")
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .exposedHeaders("Content-Type")
                         .allowCredentials(true);
