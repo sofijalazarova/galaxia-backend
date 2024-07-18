@@ -5,6 +5,26 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+//@Configuration
+//public class CorsConfiguration {
+//
+//    @Bean
+//    public WebMvcConfigurer corsConfigurer(){
+//        return new WebMvcConfigurer() {
+//            @Override
+//            public void addCorsMappings(CorsRegistry registry) {
+//                registry.addMapping("/api/**")
+////                        .allowedOriginPatterns("http://localhost:5173")
+//// 2                        .allowedOriginPatterns("http://localhost:5173/galaxia")
+//                        .allowedOriginPatterns("https://sofijalazarova.github.io/galaxia/")
+//                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+//                        .exposedHeaders("Content-Type")
+//                        .allowCredentials(true);
+//            }
+//        };
+//    }
+//}
+
 @Configuration
 public class CorsConfiguration {
 
@@ -14,13 +34,13 @@ public class CorsConfiguration {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-//                        .allowedOriginPatterns("http://localhost:5173")
-// 2                        .allowedOriginPatterns("http://localhost:5173/galaxia")
-                        .allowedOriginPatterns("https://sofijalazarova.github.io/galaxia/")
+                        .allowedOriginPatterns("https://sofijalazarova.github.io")
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
-                        .exposedHeaders("Content-Type")
+                        .allowedHeaders("Content-Type", "Authorization")
+                        .exposedHeaders("Authorization")
                         .allowCredentials(true);
             }
         };
     }
 }
+
