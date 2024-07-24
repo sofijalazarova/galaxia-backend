@@ -30,6 +30,16 @@ public class CourseController {
     private final FileStorageService fileStorageService;
     private final QuizService quizService;
 
+    private static final List<Course> courses = List.of(
+            new Course("Astronomy Basics", "Astronomy Basics desc", 10, "https://img.freepik.com/foto-gratis/fondo-espacial-polvo-estrellas-estrellas-brillantes-cosmos-colorido-realista-nebulosa-via-lactea_1258-150914.jpg?size=338&ext=jpg"),
+            new Course("Advanced Astrophysics", "Advanced Astrophysics desc", 12, "https://img.freepik.com/foto-gratis/fondo-espacial-polvo-estrellas-estrellas-brillantes-cosmos-colorido-realista-nebulosa-via-lactea_1258-150914.jpg?size=338&ext=jpg")
+    );
+
+    @GetMapping("listcourses")
+    public List<Course> findAllCourses(){
+        return courses;
+    }
+
     @GetMapping("courses")
     public ResponseEntity<List<Course>> getCourses() {
         try {
