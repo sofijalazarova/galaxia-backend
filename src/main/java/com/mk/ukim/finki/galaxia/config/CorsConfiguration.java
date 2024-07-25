@@ -36,7 +36,7 @@ public class CorsConfiguration {
                 registry.addMapping("/api/**")
                         .allowedOriginPatterns("https://sofijalazarova.github.io")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("Content-Type", "Authorization")
+                        .allowedHeaders("Content-Type", "Authorization", "X-Requested-With", "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers")
                         .exposedHeaders("Authorization")
                         .allowCredentials(true);
             }
