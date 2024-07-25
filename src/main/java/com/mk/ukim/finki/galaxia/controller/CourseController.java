@@ -19,10 +19,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin(origins = "https://sofijalazarova.github.io", allowCredentials = "true")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 public class CourseController {
 
     private final CourseService courseService;
