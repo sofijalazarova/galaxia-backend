@@ -22,7 +22,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class CourseController {
 
     private final CourseService courseService;
