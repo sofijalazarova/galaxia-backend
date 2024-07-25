@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = "https://sofijalazarova.github.io", allowCredentials = "true")
+@CrossOrigin(origins = "https://sofijalazarova.github.io/galaxia/", allowCredentials = "true")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api")
