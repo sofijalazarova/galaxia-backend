@@ -28,17 +28,32 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CorsConfiguration {
 
+//    @Bean
+//    public WebMvcConfigurer corsConfigurer(){
+//        return new WebMvcConfigurer() {
+//            @Override
+//            public void addCorsMappings(CorsRegistry registry) {
+//                registry.addMapping("/api/**")
+//                        .allowedOriginPatterns("https://sofijalazarova.github.io/galaxia/")
+//                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+//                        .allowedHeaders("Content-Type", "Authorization", "X-Requested-With", "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers")
+//                        .exposedHeaders("Authorization")
+//                        .allowCredentials(true);
+//            }
+//        };
+//    }
+
     @Bean
-    public WebMvcConfigurer corsConfigurer(){
+    public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOriginPatterns("https://sofijalazarova.github.io/galaxia/")
+                        .allowedOrigins("https://sofijalazarova.github.io")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("Content-Type", "Authorization", "X-Requested-With", "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers")
-                        .exposedHeaders("Authorization")
-                        .allowCredentials(true);
+                        .allowedHeaders("*")
+                        .allowCredentials(true)
+                        .maxAge(3600);
             }
         };
     }

@@ -10,6 +10,9 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfigurationSource;
+
+import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
@@ -23,6 +26,7 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http.csrf(AbstractHttpConfigurer::disable);
+
         http.authorizeHttpRequests((httpRequest) -> {
             //httpRequest.requestMatchers("/api/auth/**").permitAll()
             httpRequest.requestMatchers("/api/**").permitAll()
@@ -36,4 +40,7 @@ public class SecurityConfiguration {
 
         return http.build();
     }
+
+
+
 }
